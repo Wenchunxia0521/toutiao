@@ -10,8 +10,11 @@ class User(Base):
     id = Column(Integer, primary_key=True, autoincrement=True)
     username = Column(String(50), unique=True, nullable=False)
     password = Column(String(255), nullable=False)
-    bio = Column(String(255), default="这个人很懒，什么都没留下")
+    nickname = Column(String(50))
     avatar = Column(String(255))
+    gender = Column(String(10), default="unknown")
+    bio = Column(String(255), default="这个人很懒，什么都没留下")
+    phone = Column(String(20))
     created_at = Column(DateTime, default=datetime.utcnow)
     updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
 

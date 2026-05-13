@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from routers import users,news
+from routers import users,news,favorite,history
 from fastapi.middleware.cors import CORSMiddleware
 
 
@@ -19,3 +19,5 @@ async def root():
 
 app.include_router(users.router)
 app.include_router(news.router)
+app.include_router(favorite.router)
+app.include_router(history.router)
